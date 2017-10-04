@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title  %} {{ block.super }} | Cadastro Fornecedor
+
+{% endblock title  %}
+
+
+{% block main  %}
+
+<main>
+		<div class = "cadastrofornecedor">
+			<div class = "wrap">
+				<form name = "form" action="" method="POST">
+					<div class="texto-fornecedor"  >
+						<h4> Cadastro de Fornecedor</h4>
+						<div class="form-group nomecompleto">
+							<label>Nome Completo: </label>
+							<input id = "nomefornecedor"  name="name" type="text"  onblur ="personalizarCadastroFornecedor()" />
+						</div>
+						<div  class="form-group razaosocial">
+							<label>Razão Social: </label>
+							<input id = "razaosocial" name = "razaosocial" type ="text"  onblur ="personalizarCadastroFornecedor()"/>
+						</div>
+
+						<div  class="form-group cpf">
+							<label>CPF:</label>
+							<input id = "cpffornecedor" name="cpf" type="text" onblur ="personalizarCadastroFornecedor()" />
+						</div>
+						<div  class="form-group cnpj">
+							<label>CNPJ:</label>
+							<input id = "cnpjfornecedor" name="cnpj" type="text" onblur ="personalizarCadastroFornecedor()"  />
+						</div>
+						<div class="form-group endereco">
+							<label>Endereço:</label>
+							<input name="endereco" type="text"  />
+						</div>
+						<div class="form-group descparticipacao">
+							<label>Descrição de Participação:</label>
+							<input name="descparticipacao" type="text"  />
+						</div>
+						<div class = "button">
+							<input name="botaocadastrar" type="button" value="Cadastrar" onClick="javascript:feedbackMessageAndCleanForm(this);" data-feedbackMessage="Cadastro realizado com sucesso" />
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</main>
+<div class="clear"> </div>
+
+{% endblock main %}

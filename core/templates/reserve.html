@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title  %} {{ block.super }} | Reservar Remédio
+
+{% endblock title  %}
+
+
+{% block main  %}
+
+<main>
+		<div class = "reservaremedio">
+			<div class = "wrap">
+				<form>
+					<div class="texto-reserva">
+						<h4> Reservar Remédio</h4>
+						<div class="form-group nomecompleto">
+							<label>Nome do Remédio: </label>
+							<!-- <select name = "nomeremedio" autofocus>
+								<option value = ""> Clique para selecionar o nome do medicamento </option>
+								<option value="volvo">Atroveran</option>
+								<option value="saab">Losartan Potássica</option>
+								<option value="opel">Plaquinol</option>
+								<option value="audi">Tilenol</option>
+							</select> !-->
+							<input type="text" name="search" autofocus placeholder="Pesquisar..">
+						</div>
+						<div class="form-group tamanho">
+							<label>Tamanho: </label>
+							<select name = "nomeremedio" autofocus>
+								<option value = ""> Clique para selecionar o tamanho do medicamento </option>
+								<option value="5mg">5 mg</option>
+								<option value="10mg">10 mg</option>
+								<option value="20mg">20 mg</option>
+								<option value="30mg">30 mg</option>
+								<option value="400mg">400 mg</option>
+							</select>
+
+						</div>
+						<div class = "form-group exato">
+							<!--<input type="checkbox" name="exato" value="exato"> Quero medicamentos somente desse tamanho. </input> !-->
+							<h3>* Medicamentos exatamente nesse tamanho. </h3>
+						</div>
+
+
+						<div class="form-group quantidade">
+							<label>Quantidade (em pílulas): </label>
+							<input name = "quantidade" type ="number"/>
+
+							<!--<div class = "form-group adicionar">
+								<label> Adicionar Medicamento:</label>
+								<input type="button" name="add" value="+"></input>
+
+							</div> !-->
+
+						</div>
+
+
+						<div class="form-group nomemedico">
+							<label>Nome Completo do Médico:</label>
+							<input type="text" name="nomemedico">
+						</div>
+						<div class="form-group crm">
+							<label>CRM:</label>
+							<select name = "crm">
+								<option value = ""> Clique para selecionar o estado do crm do médico </option>
+								<option value="es">ES</option>
+								<option value="go">GO</option>
+								<option value="rj">RJ</option>
+								<option value="rs">RS</option>
+								<option value="to">TO</option>
+							</select>
+							<!--div class = "form-group adicionar">
+								<label> Adicionar Médico:</label>
+								<input type="button" name="add" value="+"></input>
+
+							</div> !-->
+						</div>
+
+						<div class="form-group prescricaomedica">
+							<label>Prescrição Médica:</label>
+							<input name="prescricaomedica" type="file"  />
+						</div>
+
+						<div class = "button">
+							<input name="botaoreservar" type="submit" value="Confirmar"/>
+
+							<input name="botaocancelar" type="submit" value="Cancelar"/>
+						</div>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</main>
+
+{% endblock main %}

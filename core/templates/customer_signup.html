@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title  %} {{ block.super }} | Cadastro Cliente
+
+{% endblock title  %}
+
+
+{% block main  %}
+
+<main>
+		<div class = "cadastrocliente">
+			<div class = "wrap">
+				<form action="" name = "form" onsubmit = "return validaForm()" method = "post">
+					<div class="texto-cliente">
+						<h4> Cadastro de Cliente</h4>
+						<div class="form-group nomecompleto">
+							<label>Nome Completo: </label>
+							<input name="name" type="text"  />
+						</div>
+						<div class="form-group nomemae">
+							<label>Nome da Mãe: </label>
+							<input name = "nomemae" type ="text"/>
+						</div>
+						<div class="form-group datanascimento">
+							<label>Data de Nascimento:</label>
+							<input name="datanascimento" type="text"  />
+						</div>
+						<div class="form-group menor cpf">
+							<label>CPF:</label>
+							<input name="cpf" type="text"  />
+						</div>
+						<div class="form-group menor rg">
+							<label>RG:</label>
+							<input name="rg" type="text"  />
+						</div>
+						<div class="form-group email">
+							<label>E-mail:</label>
+							<input name="email" type="email" onblur= "ValidaEmail(this.value)" />
+						</div>
+						<div class="form-group endereco">
+							<label>Endereço:</label>
+							<input name="endereco" type="text"  />
+						</div>
+						<div class="form-group cartaosus">
+							<label>Número do Cartão SUS:</label>
+							<input name="cartaosus" type="text"  />
+						</div>
+						<div class = "button">
+							<input name="botaocadastrar" type="submit" value="Cadastrar"/>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</main>
+{% endblock main %}

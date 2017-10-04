@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title  %} {{ block.super }} | Doar Remédio
+
+{% endblock title  %}
+
+
+{% block main  %}
+
+<main>
+  <div class = "doaremedio">
+    <div class = "wrap">
+      <form method="POST" action="">
+        <div class="texto-doa">
+          <h4> Doar Remédio</h4>
+          <div class="form-group nomeremedio">
+            <label>Nome do Remédio: </label>
+            <input name="nomeremedio" type="text"  />
+          </div>
+          <div class="form-group tamanho">
+            <label>Tamanho (em gramas): </label>
+            <input name = "quantidade" type ="number"/>
+          </div>
+          <div class="form-group quantidade">
+            <label>Quantidade: </label>
+            <input name = "quantidade" type ="number"/>
+          </div>
+
+          <div class="form-group datadoacao">
+            <label>Data da Doação:</label>
+            <input name="datadoacao" type="text"  />
+          </div>
+
+
+          <div class = "button">
+            <input name="botaoreservar" type="button" onClick="javascript:feedbackMessageAndCleanForm(this);" data-feedbackMessage="Solicitação de doação enviada com sucesso" value="Doar" />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+<div class="clear"> </div>
+
+{% endblock main %}

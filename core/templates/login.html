@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title  %} {{ block.super }} | Login
+
+{% endblock title  %}
+
+
+{% block main  %}
+
+<main>
+  <div class = "login">
+    <div class = "wrap">
+      <center>
+        {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </center>
+      <form method="POST" action="">
+        {% csrf_token %}
+	<h4>Autenticação</h4>
+	<input id="loginusuario" name="username" class="username" type="text" placeholder="CPF ou CNPJ"/>
+	<input id="loginsenha" name="password" class="pw" type="password" placeholder="Senha" />
+	<input class="button" type="submit" value="Acessar" />
+      </form>
+    </div>
+  </div>
+</main>
+<div class="clear"></div>
+
+{% endblock main %}

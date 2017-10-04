@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title  %} {{ block.super }} | Sobre
+
+{% endblock title  %}
+
+
+{% block main  %}
+
+<main>
+  <div class = "wrap">
+    <div class="about">
+      <h4> Sobre Nós </h4>
+      <div class="content-box">
+	<div class="row">
+	  <div class="col col-4">
+	    <img src="{% static 'website/images/box-img1.jpg' %}" />
+	  </div>
+
+	  <div class="content col col-8">
+	    <p>No Brasil, um dos problemas que afetam muito a população está relacionado à saúde, especialmente na redistribuição de remédios. Pacientes frequentemente não conseguem tratar suas doenças por serem tratamentos caros, e mesmo com a distribuição gratuita do governo não se consegue suprir toda a demanda. Para reduzir esse problema, foram realizadas iniciativas como a criação de bancos de remédios que recebem remédios doados, lacrados ou abertos, e são repassados para os necessitados. Entretanto, além dos poucos bancos de remédios existentes no Brasil, não existe um sistema livre que possa gerenciar doações de remédios e motivar a criação de novos bancos.</p>
+	    <br />
+	    <p>O cliente, seja pessoa física ou jurídica, solicita a reserva do produto, no qual os remédios são solicitados por unidades (por quantidade de pílulas por exemplo), então a reserva entra em uma fila de prioridade e é agendada para a retirada do produto.  Os fornecedores doam os produtos, e então os técnicos da ONG realizam a classificação, verificação de conteúdo, prazo de validade e os cadastram no sistema. As doações e a obtenção dos produtos podem ser realizadas fisicamente ou pela internet.  </p>
+	    <br />
+	    <p>Recebemos 500 remédios doados, 20% foram descartados separadamente por invalidez, dos 400 remédios restantes, 338 foram solicitados e 98% foram recebidos com sucesso, 2% são remédios faltantes.Esse sistema ajuda no tratamento de doenças de forma colaborativa e, além de reduzir descartes, também motiva criação de novas ONGs para doações de remédios. </p>
+	  </div>
+	</div>
+
+	<div class="row">
+	  <div class="content col col-8">
+	    <p>Um dos cinco indicadores relacionados a avanços na garantia do direito à saúde reconhecido pela Organização das Nações Unidas é o acesso a medicamentos essenciais. O acesso aos medicamentos é obtido por meio da disponibilidade destes, da capacidade aquisitiva das pessoas, de sua aceitabilidade e acessibilidade geográfica, levando ao uso do produto. No início do século XXI, estima-se que uma em cada três pessoas não tem acesso aos fármacos e que em países de baixa e média renda, no pior caso, pode chegar a 50%.</p>
+	    <br />
+	    <p>No Brasil, apesar da efetivação de políticas públicas a partir da década de 1990, como a Política Nacional de Assistência Farmacêutica (PNAF), a Política Nacional de Medicamentos (PNM), a Política de Medicamentos Genéricos e o Programa Farmácia Popular, a estabilidade da disponibilização de medicamentos e em quantidades satisfatórias ainda é um desafio a ser superado. Em adição, o gasto privado em remédios é expressivo no país, principalmente considerando a existência de um sistema de saúde público com cobertura universal e gratuito para os usuários.</p>
+	    <br />
+	    <p>O acesso insuficiente aos medicamentos está diretamente associado com maior uso de terapias adicionais, gastos adicionais nos tratamentos, piora do estado de saúde e aumento no número de retornos aos serviços de saúde. A subutilização de medicamentos está inversamente associada à posição socioeconômica, isso evidencia que grande parcela da população tem como única alternativa o sistema público de saúde para viabilizar os tratamentos necessários.</p>
+	  </div>
+
+	  <div class="col col-4">
+	    <img src="{% static 'website/images/staff2.jpg' %}" />
+	  </div>
+	</div>
+      </div>
+
+      <div>
+	<div class="clear"></div>
+      </div>
+</main>
+{% endblock main %}
