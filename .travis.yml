@@ -6,8 +6,3 @@ branches:
   - master
   install:
 - pip install -r requirements.txt
-deploy:
-  provider: heroku
-  api_key:
-    secure: "AAAAB3NzaC1yc2EAAAADAQABAAABAQDBU6Qnvs/DDOMx5l11AoD2pzhJRMg1urIxHNFQ9JHZAnO8vdWtQRuBxr24UpJMyosDEnUOkxA0kOgm7tl7rQhJk4X53xkmMsbv5ZoXyegWnHMzhZBzlLmoLOtS4g8p47Pew5j10Igu9w3dOst9ObrY9pnjxAhd1yTABuHSFlgXjj0crtiVm4E980rTuTBfFtD6BwWmMBnWqhBA/6K3rJCAYs5SCKEVp6tBouezRQqltfbtHgSGnUncXrMJKKmNBAEDFQoLkWmcLQna1SXXWODtiCLUOFCY76xLBO0VZ2RaN4z5/tsGA+kaLAAwOnqK21tr6qH149TkYSC2feY2LY/z windows
-"
