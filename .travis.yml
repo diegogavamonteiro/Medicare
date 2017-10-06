@@ -10,4 +10,4 @@ deploy:
   provider: heroku
   api_key:
     secure: "7f6178ce-0f8f-4042-abb8-b75b304447fd"
-  app: medicare
+  app: medicarewebsite
