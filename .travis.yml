@@ -5,6 +5,7 @@ branches:
   only:
   - master
 install:
+- pip install python
 - pip install -r requirements.txt
 deploy:
   provider: heroku
