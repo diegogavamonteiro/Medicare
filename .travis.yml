@@ -6,3 +6,6 @@ branches:
   - master
 install:
 - pip install -r requirements.txt
+  app: medicare
+  on:
+    repo: diegogavamonteiro/Medicare
