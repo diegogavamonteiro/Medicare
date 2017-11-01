@@ -7,6 +7,8 @@
 
 
 {% block main  %}
+{% comment %}
+
 
 <main>
 		<div class = "cadastrofornecedor">
@@ -31,6 +33,10 @@
 							<label>CNPJ:</label>
 							<input id = "cnpjfornecedor" name="cnpj" type="text" onblur ="personalizarCadastroFornecedor()"  />
 						</div>
+						<div class="form-group emailfornecedor">
+							<label>E-mail:</label>
+							<input name="emailfornecedor" type="text"  />
+						</div>
 						<div class="form-group endereco">
 							<label>Endereço:</label>
 							<input name="endereco" type="text"  />
@@ -39,6 +45,7 @@
 							<label>Descrição de Participação:</label>
 							<input name="descparticipacao" type="text"  />
 						</div>
+
 						<div class = "button">
 							<input name="botaocadastrar" type="button" value="Cadastrar" onClick="javascript:feedbackMessageAndCleanForm(this);" data-feedbackMessage="Cadastro realizado com sucesso" />
 						</div>
@@ -48,5 +55,31 @@
 		</div>
 	</main>
 <div class="clear"> </div>
+{% endcomment %}
+<main>
+  <div class = "cadastrofornecedor">
+    <div class = "wrap">
+      <center>
+        {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </center>
+      <form name = "form" action="" method="POST">
+        {% csrf_token %}
+	<div class="texto-fornecedor"  >
+	  <h4> Cadastro de Fornecedor</h4>
+	  {{ form.as_p }}
+	  <div class = "button">
+	    <input name="botaocadastrar" type="submit" value="Cadastrar" />
+	  </div>
+	</div>
+      </form>
+    </div>
+  </div>
+</main>
 
 {% endblock main %}

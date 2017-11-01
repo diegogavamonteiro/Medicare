@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load widget_tweaks %}
 
 {% block title  %} {{ block.super }} | Login
 
@@ -11,21 +12,36 @@
 <main>
   <div class = "login">
     <div class = "wrap">
-      <center>
-        {% if messages %}
-        <ul class="messages">
-          {% for message in messages %}
-          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-          {% endfor %}
-        </ul>
-        {% endif %}
-      </center>
-      <form method="POST" action="">
+      <form method="post" action="">
         {% csrf_token %}
-	<h4>Autenticação</h4>
-	<input id="loginusuario" name="username" class="username" type="text" placeholder="CPF ou CNPJ"/>
-	<input id="loginsenha" name="password" class="pw" type="password" placeholder="Senha" />
-	<input class="button" type="submit" value="Acessar" />
+          {% for error in form.non_field_errors %}
+              <div class = "alert alert-danger">
+                  {{ error }}
+              </div>
+          {% endfor %}
+
+        	<h4>Autenticação</h4>
+          <fieldset>
+            <div class="form-group{% if form.username.errors %} has-error{% endif %}">
+               <label for="{{ form.username.auto_id }}" class="col-md-3 control-label"></label>
+               {% render_field form.username class="username" placeholder="CPF ou CNPJ" %}
+               <div class="col-md-9">
+                       {% for error in form.username.errors %}
+                       <span class="help-block">{{ error }}</span>
+                       {% endfor %}
+                </div>
+              </div>
+              <div class="form-group{% if form.password.errors %} has-error{% endif %}">
+                <label for="{{ form.password.auto_id }}" class="col-md-3 control-label"></label>
+                  <div class="col-md-9">
+                    {% render_field form.password class="username" placeholder="Senha" %}
+                    {% for error in form.password.errors %}
+                    <span class="help-block">{{ error }}</span>
+                    {% endfor %}
+                  </div>
+                </div>
+          </fieldset>
+        	<input class="button" type="submit" value="Acessar" />
       </form>
     </div>
   </div>

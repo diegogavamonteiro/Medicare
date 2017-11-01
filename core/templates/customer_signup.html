@@ -5,8 +5,10 @@
 
 {% endblock title  %}
 
+{% load widget_tweaks %}
 
 {% block main  %}
+{% comment %}
 
 <main>
 		<div class = "cadastrocliente">
@@ -54,4 +56,31 @@
 			</div>
 		</div>
 	</main>
+	{% endcomment %}
+
+	<main>
+  <div class = "cadastrocliente">
+    <div class = "wrap">
+      <center>
+        {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </center>
+      <form action="" name = "form" onsubmit = "return validaForm()" method = "post">
+        {% csrf_token %}
+	<div class="texto-cliente">
+	  <h4> Cadastro de Cliente</h4>
+	  {{ form.as_p }}
+	  <div class = "button">
+	    <input name="botaocadastrar" type="submit" value="Cadastrar" />
+	  </div>
+	</div>
+      </form>
+    </div>
+  </div>
+</main>
 {% endblock main %}

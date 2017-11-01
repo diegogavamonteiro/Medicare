@@ -5,6 +5,9 @@
 
 {% endblock title  %}
 
+{% block activate_services %}
+  <li class = "active"><a href="{% url 'services' %}">Serviços</a></li>
+{% endblock activate_services %}
 
 {% block main  %}
 
@@ -15,27 +18,27 @@
       <div class="section group">
         <div class="col_1_of_5 span_1_of_5">
   	<h3>Entrega a Domicílio</h3>
-  	<img src="{% static 'website/images/1.png' %}" title="service1">
+  	<img src="{% static 'assets/images/1.png' %}" title="service1" alt ="service1">
   	<p>Entregamos suas reservas de medicamentos a domicílio. Faça sua reserva e solicite entrega a domicílio.</p>
         </div>
         <div class="col_1_of_5 span_1_of_5">
   	<h3>Coleta de Medicamentos Vencidos</h3>
-  	<img src="{% static 'website/images/5.png' %}" title="service1">
+  	<img src="{% static 'assets/images/5.png' %}" title="service1" alt ="service1">
   	<p>Coletamos medicamentos vencidos. A coleta ajuda a reduzir os descartes de medicamentos, minimizando problemas ao meio ambiente.</p>
         </div>
         <div class="col_1_of_5 span_1_of_5">
   	<h3>Fabricação de Medicamentos</h3>
-  	<img src="{% static 'website/images/2.png' %}" title="service1">
+  	<img src="{% static 'assets/images/2.png' %}" title="service1" alt ="service1">
   	<p>Fabricamos alguns medicamentos, os quais são para pressão arterial e dor de cabeça.</p>
         </div>
         <div class="col_1_of_5 span_1_of_5">
   	<h3>Primeiros Socorros</h3>
-  	<img src="{% static 'website/images/4.png' %}" title="service1">
+  	<img src="{% static 'assets/images/4.png' %}" title="service1" alt ="service1">
   	<p>Temos assistência imediata para primeiros socorros, incluindo apoio psicológico para pessoas que sofrem emocionalmente devido a vivência ou testemunho de um evento traumático. </p>
         </div>
         <div class="col_1_of_5 span_1_of_5">
   	<h3>Doações de Medicamentos</h3>
-  	<img src="{% static 'website/images/5.png' %}" title="service1">
+  	<img src="{% static 'assets/images/5.png' %}" title="service1" alt ="service1">
   	<p>Recebemos doações de medicamentos e as repassamos para quem desejar. Faça sua doação sendo um fornecedor, ou reserve seu medicamento sendo um cliente.</p>
         </div>
       </div>

@@ -5,6 +5,9 @@
 
 {% endblock title  %}
 
+{% block activate_about %}
+  <li class = "active"><a href="{% url 'about' %}">Sobre Nós</a></li>
+{% endblock activate_about %}
 
 {% block main  %}
 
@@ -15,7 +18,7 @@
       <div class="content-box">
 	<div class="row">
 	  <div class="col col-4">
-	    <img src="{% static 'website/images/box-img1.jpg' %}" />
+	    <img src="{% static 'assets/images/box-img1.jpg' %}" alt= "box-img1" />
 	  </div>
 
 	  <div class="content col col-8">
@@ -37,7 +40,7 @@
 	  </div>
 
 	  <div class="col col-4">
-	    <img src="{% static 'website/images/staff2.jpg' %}" />
+	    <img src="{% static 'assets/images/staff2.jpg' %}" alt = "staff2"/>
 	  </div>
 	</div>
       </div>

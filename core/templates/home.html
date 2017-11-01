@@ -1,10 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
 
+
 {% block title  %} {{ block.super }} | Home
 
 {% endblock title  %}
 
+{% block activate_home %}
+  <li class = "active"><a href= "{% url 'home' %}" >Home</a></li>
+{% endblock activate_home %}
 
 {% block main  %}
 <!--start-image-slider-->
@@ -13,12 +17,12 @@
   <ul class="rslides" id="slider1">
     <li>
       <figure>
-	<img src="{% static 'website/images/medicamentos1.jpg' %}" alt="Medicamento">
+	<img src="{% static 'assets/images/medicamentos1.jpg' %}" alt="Medicamento">
       </figure>
     </li>
     <!--
-	 <li><img src="{% static 'website/images/slider-image2.jpg' %}" alt=""></li>
-    <li><img src="{% static 'website/images/slider-image1.jpg' %}" alt=""></li>
+	 <li><img src="{% static 'assets/images/slider-image2.jpg' %}" alt=""></li>
+    <li><img src="{% static 'assets/images/slider-image1.jpg' %}" alt=""></li>
     -->
   </ul>
   <!-- Slideshow 2 -->
@@ -32,7 +36,7 @@
       <div class="listview_1_of_3 images_1_of_3">
 	<section>
 	  <div class="listimg listimg_1_of_2">
-	    <a href="{% url 'login' %}"><img src="{% static 'website/images/grid-img1.png' %}" alt = "Homem"></a>
+	    <a href="{% url 'login' %}"><img src="{% static 'assets/images/grid-img1.png' %}" alt = "Homem"></a>
 	  </div>
 	  <div class="text list_1_of_2">
 	    <a href="{% url 'login' %}"> <h3>Faça o Login</h3></a>
@@ -45,7 +49,7 @@
 	<section>
 
 	  <div class="listimg listimg_1_of_2">
-	    <img src="{% static 'website/images/grid-img2.png' %}" alt = "Relogio">
+	    <img src="{% static 'assets/images/grid-img2.png' %}" alt = "Relogio">
 	  </div>
 	  <div class="text list_1_of_2">
 	    <h3>Reserve Remédios</h3>
@@ -58,7 +62,7 @@
       <div class="listview_1_of_3 images_1_of_3">
 	<section>
 	  <div class="listimg listimg_1_of_2">
-	    <img src="{% static 'website/images/grid-img2.png' %}" alt = "Relogio">
+	    <img src="{% static 'assets/images/grid-img2.png' %}" alt = "Relogio">
 	  </div>
 	  <div class="text list_1_of_2">
 	    <h3>Doe Remédios</h3>
@@ -71,7 +75,7 @@
       <div class="listview_1_of_3 images_1_of_3">
 	<section>
 	  <div class="listimg listimg_1_of_2">
-	    <img src="{% static 'website/images/grid-img3.png' %}" alt = "Trabalhe Conosco">
+	    <img src="{% static 'assets/images/grid-img3.png' %}" alt = "Trabalhe Conosco">
 	  </div>
 	  <div class="text list_1_of_2">
 	    <h3>Trabalhe Conosco</h3>

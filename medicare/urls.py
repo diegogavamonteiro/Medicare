@@ -17,20 +17,22 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.conf import settings
 from django.views.static import serve as serve_static
+from django.contrib.auth.views import login, logout
 
-from core.views import *
+from core import views
 
 urlpatterns = [
-    url(r'^$',index),
-    url(r'^home/?', index, name = 'index'),
-    url(r'^about/?',about, name = 'about' ),
-    url(r'^services/?',services, name = 'services' ),
-    url(r'^contact/?',contact, name = 'contact' ),
-    url(r'^customer_signup/?',customerSignup, name = 'customer_signup' ),
-    url(r'^donate/?',donate, name = 'donate' ),
-    url(r'^login/?',login, name = 'login' ),
-    url(r'^reserve/?',reserve, name = 'reserve' ),
-    url(r'^signup/?',signup, name = 'signup' ),
-    url(r'^supplier_signup/?',supplier_signup, name = 'supplier_signup' ),
+    url(r'^$', views.index, name='home'),
+    url(r'^home/?', views.index, name='home'),
+    url(r'^about/?', views.about, name='about'),
+    url(r'^services/?', views.services, name='services'),
+    url(r'^contact/?',views.contact, name = 'contact' ),
+    url(r'^customer_signup/?',views.customer_register, name = 'customer_signup' ),
+    url(r'^donate/?',views.donate, name = 'donate' ),
+    url(r'^login/?',  login, {'template_name': 'login.html'}, name = 'login' ),
+    url(r'^logout/?',  logout, {'next_page': 'home'}, name = 'logout' ),
+    url(r'^reserve/?',views.reserve, name = 'reserve' ),
+    url(r'^signup/?',views.signup, name = 'signup' ),
+    url(r'^supplier_signup/?', views.supplier_register, name='supplier_signup'),
     url(r'^admin/', admin.site.urls),
 ]

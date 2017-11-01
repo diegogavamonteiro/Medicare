@@ -1,0 +1,7 @@
+organization=medicarewebsite
+projectKey=medicarewebsite
+serverUrl=https://sonarcloud.io
+serverVersion=6.6.0.30458
+dashboardUrl=https://sonarcloud.io/dashboard/index/medicarewebsite
+ceTaskId=AV75DdYAfwWpOfyf_gWH
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AV75DdYAfwWpOfyf_gWH

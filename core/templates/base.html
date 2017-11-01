@@ -1,14 +1,16 @@
 <!DOCTYPE HTML>
 {% load static %}
 
+
+
 <html lang = "pt">
 
 <head>
 	<meta charset="UTF-8">
 	<title>{% block title  %}Banco de Remédios{% endblock title %}</title>
-	<link href = "{% static 'website/css/style.css' %}" rel = "stylesheet" type = "text/css" media = "all"/>
-	<link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
-	<script type="text/javascript" src="{% static 'website/js/funcoes.js' %}" ></script>
+	<link rel = "stylesheet" href = "{% static 'assets/css/style.css' %}" type = "text/css" media = "all"/>
+	<link rel="icon" href="{% static 'assets/images/img_icon.png' %}" type="image/gif">
+	<script type="text/javascript" src="{% static 'assets/js/funcoes.js' %}" ></script>
 </head>
 <body>
 	<!--start-wrap-->
@@ -18,23 +20,30 @@
 		<div class="wrap">
 			<!--start-logo-->
 			<div class="logo">
-				<a href="home.html"><img src="{% static 'website/images/logo.png' %}" title="logo" alt = "Logo" /></a>
+				<a href="{% url 'home' %}"><img src="{% static 'assets/images/logo.png' %} " title="logo" alt = "Logo" /></a>
 			</div>
 			<!--end-logo-->
 			<!--start-top-nav-->
 			<nav>
 				<ul>
-					<li class="active"><a href="home.html">Home</a></li>
-					<li><a href="about.html">Sobre Nós</a></li>
-					<li><a href="services.html">Serviços</a></li>
-					<li><a href="contact.html">Contato</a></li>
-					<!--<li class="user-options-box">
-						<select id="actions-select" onchange="javascript:userActionChanged(this);">
-							<option class="welcome-text"></option>
-							<option class="logout">Sair</option>
-						</select>
-					</li>!-->
-				</ul>
+
+						{% block activate_home %}<li><a href= "{% url 'home' %}" >Home</a></li>{% endblock activate_home %}
+						{% block activate_about %}<li><a href="{% url 'about' %}">Sobre Nós</a></li>{% endblock activate_about %}
+						{% block activate_services %}<li><a href="{% url 'services' %}">Serviços</a></li>{% endblock activate_services %}
+						{% block activate_contact %}<li><a href="{% url 'contact' %}">Contato</a></li>{% endblock activate_contact %}
+						{% if user.is_authenticated %}
+							<li><a href="{% url 'logout' %}">Logout</a></li>
+						{% else %}
+							<li><a href="{% url 'login' %}">Login</a></li>
+						{% endif %}
+						{% if user.is_authenticated %}
+								<li class="user-options-box">
+								<select id="actions-select" onchange="javascript:userActionChanged(this);">
+								<option class="welcome-text">Olá {{ user.supplier.full_name }}</option>
+								<option class="logout">Sair</option>
+								</select>
+								</li>
+						{% endif %}
 			<!--end-top-nav-->
 			</nav>
 			<div class="clear"></div>
@@ -47,21 +56,21 @@
 
 		{% endblock main %}
 
-<footer>
+	<footer>
 
-		<div class="wrap">
-			<div class="footer-left">
-				<ul>
-					<li><a href="home.html">Home</a></li>
-					<li><a href="about.html">Sobre Nós</a></li>
-					<li><a href="services.html">Serviços</a></li>
-					<li><a href="contact.html">Contato</a></li>
-				</ul>
+			<div class="wrap">
+				<div class="footer-left">
+					<ul>
+						<li><a href="{% url 'home' %}">Home</a></li>
+						<li><a href="{% url 'about' %}">Sobre Nós</a></li>
+						<li><a href="{% url 'services' %}">Serviços</a></li>
+						<li><a href="{% url 'contact' %}">Contato</a></li>
+					</ul>
+				</div>
+
 			</div>
-
-		</div>
-		<div class="clear"> </div>
-</footer>
+			<div class="clear"> </div>
+	</footer>
 </body>
 
 </html>
